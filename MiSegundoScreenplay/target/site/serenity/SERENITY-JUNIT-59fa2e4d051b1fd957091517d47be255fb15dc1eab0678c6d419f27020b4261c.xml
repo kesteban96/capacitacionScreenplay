@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Google Translate" skipped="0" tests="1" time="6.1" timestamp="2019-08-09 11:15:32"><testcase name="Translate from English to spanish"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=76.0.3809.100)&#10;Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'&#10;System info: host: 'SBMEDLAPPROKG4', ip: '172.22.126.17', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\KEVIN~1.GUT\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59388}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 5a46d39f5df1be4c497a89f7c1ca6f89&#10;*** Element info: {Using=id, value=gbwa}" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=76.0.3809.100)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'SBMEDLAPPROKG4', ip: '172.22.126.17', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\KEVIN~1.GUT\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59388}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5a46d39f5df1be4c497a89f7c1ca6f89
+*** Element info: {Using=id, value=gbwa}</error><system-err>no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=76.0.3809.100)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'SBMEDLAPPROKG4', ip: '172.22.126.17', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\KEVIN~1.GUT\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59388}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5a46d39f5df1be4c497a89f7c1ca6f89
+*** Element info: {Using=id, value=gbwa}&#13;
+co.com.bancolombia.certificacion.googlesuite.tasks.GoTo.performAs(GoTo.java:18)&#13;
+co.com.bancolombia.certificacion.googlesuite.stepdefinitions.GoogleTranslateStepDefinitions.thanSusanWantsToTranslateAWord(GoogleTranslateStepDefinitions.java:43)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>
