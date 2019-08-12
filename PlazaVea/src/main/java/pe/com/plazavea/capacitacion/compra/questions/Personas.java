@@ -10,9 +10,9 @@ public class Personas implements Question<String> {
 
 	@Override
 	public String answeredBy(Actor actor) {
-		//refactorizacion
-		String word=Text.of(RealizarCompra.realizarCompra).viewedBy(actor).asString();
-		return word;
+		
+		return Text.of(RealizarCompra.realizarCompra).viewedBy(actor).asString();
+		
 	}
 
 	public static Personas compran() {

@@ -26,12 +26,16 @@ public class BuscarProducto implements Task{
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		
-		//actor.attemptsTo(Enter.theValue("Televisor LG LED 49 FHD Smart 49lk").into(PlazaVeaHome.buscartxt));
 		actor.attemptsTo(Click.on(PlazaVeaHome.seleccionar));
-		JOptionPane.showInputDialog(producto);
 		actor.attemptsTo(Enter.theValue(producto).into(PlazaVeaHome.buscartxt));
 		actor.attemptsTo(Hit.the(Keys.ENTER).into(PlazaVeaHome.buscartxt));
 		actor.attemptsTo(Click.on(PlazaVeaHome.seleccionarProducto));
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 		actor.attemptsTo(Click.on(PlazaVeaHome.agregarProducto));
 		actor.attemptsTo(Click.on(PlazaVeaHome.seleccionarCarrito));
 		actor.attemptsTo(Click.on(PlazaVeaHome.seleccionarComprar));
@@ -39,7 +43,7 @@ public class BuscarProducto implements Task{
 
 	public static BuscarProducto to(String producto) {
 		return Tasks.instrumented(BuscarProducto.class,producto);
-		//return Tasks.instrumented(BuscarProducto.class);
+		
 	}
 
 }

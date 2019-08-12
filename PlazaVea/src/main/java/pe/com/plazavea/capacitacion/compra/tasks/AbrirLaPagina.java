@@ -17,14 +17,14 @@ public class AbrirLaPagina implements Task {
 	
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		// TODO Auto-generated method stub
+		
 		actor.attemptsTo(Open.browserOn(abrir));
 		
 		
 	}
 
 	public static AbrirLaPagina en(PageObject abrir) {
-		// TODO Auto-generated method stub
+	
 		return Tasks.instrumented(AbrirLaPagina.class, abrir);
 	}
 

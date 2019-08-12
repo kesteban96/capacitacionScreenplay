@@ -1,7 +1,7 @@
 package pe.com.plazavea.capacitacion.compra.stepdefinitions;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.containsString;
 
 import java.util.List;
 
@@ -14,7 +14,9 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
+import pe.com.plazavea.capacitacion.compra.exceptions.ProductoNoEncontrado;
 import pe.com.plazavea.capacitacion.compra.models.ProductoAutomatizacion;
+import pe.com.plazavea.capacitacion.compra.models.ProductoComprado;
 import pe.com.plazavea.capacitacion.compra.questions.Personas;
 import pe.com.plazavea.capacitacion.compra.tasks.AbrirLaPagina;
 import pe.com.plazavea.capacitacion.compra.tasks.BuscarProducto;
@@ -34,7 +36,7 @@ public class PlazaVeaStepDefinitions {
 	@Before
 	public void setUp() {
 		
-		//su
+		
 		kevin.can(BrowseTheWeb.with(miDriver));
 	}
 	
@@ -45,25 +47,15 @@ public class PlazaVeaStepDefinitions {
 		kevin.wasAbleTo(AbrirLaPagina.en(plazaVeaHome));
 	}
 
-
-	//@When("^Realice la compra del producto$")
-	//public void realiceLaCompraDelProducto() throws Exception {
-	    
-		//Proceso de buscar el producto
-		//kevin.wasAbleTo(BuscarProducto.to());
-	//}
-	
 	@When("^Realice la compra del producto(.*)$")
 	public void realiceLaCompraDelProducto(List<ProductoAutomatizacion> producto) throws Exception {
-		//Write code here that turns the phrase above into concrete actions
+	
 			kevin.wasAbleTo(BuscarProducto.to(producto.get(0).getProducto()));
 	}
 
-	@Then("^Deberia ver su producto en el carrito$")
-	public void deberiaVerSuProductoEnElCarrito() throws Exception {
-	  
-		//Proceso de comparación que el producto seleccionado se encuentra en el carrito
-	    kevin.should(seeThat(Personas.compran(),equalTo("Televisor LG LED 49\" FHD Smart TV 49LK5400")));
+	@Then("^Deberia ver su (.*)$")
+	public void deberiaVerSu(List<ProductoComprado> productocomprado) throws Exception {
+	   
+		kevin.should(seeThat(Personas.compran(),containsString(productocomprado.get(0).getProductocomprado())).orComplainWith(ProductoNoEncontrado.class,ProductoNoEncontrado.getProductoNoEncontradoMessage()));
 	}
-	
 }
