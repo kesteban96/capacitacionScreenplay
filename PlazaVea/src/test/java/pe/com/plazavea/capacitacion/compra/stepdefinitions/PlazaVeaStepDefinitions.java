@@ -3,6 +3,8 @@ package pe.com.plazavea.capacitacion.compra.stepdefinitions;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.equalTo;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.java.Before;
@@ -12,6 +14,7 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
+import pe.com.plazavea.capacitacion.compra.models.ProductoAutomatizacion;
 import pe.com.plazavea.capacitacion.compra.questions.Personas;
 import pe.com.plazavea.capacitacion.compra.tasks.AbrirLaPagina;
 import pe.com.plazavea.capacitacion.compra.tasks.BuscarProducto;
@@ -31,25 +34,35 @@ public class PlazaVeaStepDefinitions {
 	@Before
 	public void setUp() {
 		
+		//su
 		kevin.can(BrowseTheWeb.with(miDriver));
 	}
 	
 	@Given("^Que Kevin ingresa a la pagina de plaza vea$")
 	public void queKevinIngresaALaPaginaDePlazaVea() throws Exception {
 	   
+		//Proceso de abrir el navegador
 		kevin.wasAbleTo(AbrirLaPagina.en(plazaVeaHome));
 	}
 
 
-	@When("^Realice la compra del producto$")
-	public void realiceLaCompraDelProducto() throws Exception {
+	//@When("^Realice la compra del producto$")
+	//public void realiceLaCompraDelProducto() throws Exception {
 	    
-		kevin.wasAbleTo(BuscarProducto.to());
+		//Proceso de buscar el producto
+		//kevin.wasAbleTo(BuscarProducto.to());
+	//}
+	
+	@When("^Realice la compra del producto(.*)$")
+	public void realiceLaCompraDelProducto(List<ProductoAutomatizacion> producto) throws Exception {
+		//Write code here that turns the phrase above into concrete actions
+			kevin.wasAbleTo(BuscarProducto.to(producto.get(0).getProducto()));
 	}
 
 	@Then("^Deberia ver su producto en el carrito$")
 	public void deberiaVerSuProductoEnElCarrito() throws Exception {
 	  
+		//Proceso de comparación que el producto seleccionado se encuentra en el carrito
 	    kevin.should(seeThat(Personas.compran(),equalTo("Televisor LG LED 49\" FHD Smart TV 49LK5400")));
 	}
 	

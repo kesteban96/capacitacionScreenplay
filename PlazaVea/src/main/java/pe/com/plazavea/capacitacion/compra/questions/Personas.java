@@ -1,8 +1,6 @@
 package pe.com.plazavea.capacitacion.compra.questions;
 
 
-import javax.swing.JOptionPane;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
@@ -12,9 +10,8 @@ public class Personas implements Question<String> {
 
 	@Override
 	public String answeredBy(Actor actor) {
-		
+		//refactorizacion
 		String word=Text.of(RealizarCompra.realizarCompra).viewedBy(actor).asString();
-		JOptionPane.showMessageDialog(null, word);
 		return word;
 	}
 
